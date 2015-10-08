@@ -17,7 +17,7 @@ app = Flask(__name__)
 
 # Need to use Flask sessioning features
 
-app.secret_key = 'this-should-be-something-unguessable'
+app.secret_key = '\xa9\x90A\x90\\N\xf8\xa1\xd7\xfc\x8a?r\x9f\x0cZc\xbb\x80\xd2\xad*\x1dz'
 
 # Normally, if you refer to an undefined variable in a Jinja template,
 # Jinja silently ignores this. This makes debugging difficult, so we'll
@@ -26,7 +26,7 @@ app.secret_key = 'this-should-be-something-unguessable'
 
 app.jinja_env.undefined = jinja2.StrictUndefined
 
-session['cart'] = []
+
 
 
 @app.route("/")
@@ -53,7 +53,7 @@ def show_melon(melon_id):
     """
 
     melon = melons.get_by_id(int(melon_id))
-    print melon
+    if 
     return render_template("melon_details.html",
                            display_melon=melon)
 
@@ -73,17 +73,21 @@ def shopping_cart(melon_id):
     #   - keep track of the total amt ordered for a melon-type
     #   - keep track of the total amt of the entire order
     # - hand to the template the total order cost and the list of melon types
-    {}
-
-    melon_list = session['cart']
-    for melon in melon_list:
-        price = melon.price
-
+    # {}
     
+    melon_number
+    cart = {}
+    melon_list = session['cart']
+    i = 1
+    for melon in melon_list:
 
+        total = 0
+        qty 
+        unit_cost = melon.price
+        total += price
+        cart[i]= {'common_name': 'Water Melon'}
 
-
-    return render_template("cart.html")
+    return render_template("cart.html",)
 
 
 @app.route("/add_to_cart/<int:id>")
